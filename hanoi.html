@@ -1,0 +1,21 @@
+<html>
+<script>
+N = 0
+function move(n,source,destination,temp)
+{	if(n==1)	
+	{
+		N++;
+		document.writeln("move  " + source +" to " +destination +"  <br>");
+		console.log("move" + source + "to" + destination);
+	}
+	else
+	{
+		move(n-1,source,temp,destination);
+		move(1,source,destination,temp);
+		move(n-1,temp,destination,source);
+	}
+}
+move(7,"A","C","B");//move 3 disks from 3 to using 2 as storge
+document.writeln("lines is moving = " + N);
+</script>
+</html>
